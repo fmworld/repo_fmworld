@@ -1,14 +1,35 @@
 step:
 step-1:login  get user info;
+
+		MWSSAGE_NAME = "messagename";
+		LOGIN_PASSWORD = "login_password";
+     		Map<String, String> pairs = new HashMap();
+                pairs.put(AgentConstants.MWSSAGE_NAME, "Login");
+                pairs.put("loginstyle", "2");
+                pairs.put("login_name", LoginActivity.this.et_username.getText().toString().trim());
+                pairs.put(SettingManager.LOGIN_PASSWORD, LoginActivity.this.et_password.getText().toString().trim());
+                return AgentApi.getString(pairs);
+		uri = URIUtils.createURI(UtilsLog.HTTP_SCHEME, HTTP_HOST, -1, UtilsLog.HTTP_AGENT, URLEncodedUtils.format(fillGetParams(), e.f), null);
+
 step-2:refreshing get order list;
+		MWSSAGE_NAME = "messagename";
+		CITY_NAME = "cityname";	
+
+   		HashMap<String, String> map = new HashMap();
+                map.put(AgentConstants.MWSSAGE_NAME, "WaitQiangUser");
+                map.put(ProvinceDao.CITY_NAME, TakeCustomerActivity.this.mApp.getUserInfo().cityname);
+                map.put("soufunid", TakeCustomerActivity.this.mApp.getUserInfo().soufunid);
+                map.put("sourceType", "2");
+                return AgentApi.getString(map);
+
 step-3:qiang commit params to take customer
 
 params:
 
-params = params+MD5_CONSTANT;
+		params = params+MD5_CONSTANT;
 
 
-  HashMap<String, String> params = new HashMap();
+  		HashMap<String, String> params = new HashMap();
                 params.put(AgentConstants.MWSSAGE_NAME, "QiangUser");
                 params.put("gjsoufunname", TakeCustomerActivity.this.mApp.getUserInfo().soufunname);
                 params.put("gjphone", TakeCustomerActivity.this.mApp.getUserInfo().soufunmobile);
@@ -19,14 +40,14 @@ params = params+MD5_CONSTANT;
 
 
 property:
-HTTP_SCHEME = http
-HTTP_AGENT = "/homeservice.jsp";
-HTTP_HOST = isdefault ? "111.204.241.196:9071/homeservice" : "homeapp.3g.fang.com/http";   ->  http://homeapp.3g.fang.com/http/homeservice.jsp
-HTTP_HOST_HOME = isdefault ? "trains.home.test.fang.com/zxbapp" : "trains.home.fang.com/zxbapp";
-version = "3.6.3";
-APPNAME = "\u88c5\u4fee\u5e2e";
-AccreditID = "904aa0a25d7e45cebaaaed9a3fe91060";
+		HTTP_SCHEME = http
+		HTTP_AGENT = "/homeservice.jsp";
+		HTTP_HOST = isdefault ? "111.204.241.196:9071/homeservice" : "homeapp.3g.fang.com/http";   ->  http://homeapp.3g.fang.com/http/homeservice.jsp
+		HTTP_HOST_HOME = isdefault ? "trains.home.test.fang.com/zxbapp" : "trains.home.fang.com/zxbapp";
+		version = "3.6.3";
+		APPNAME = "\u88c5\u4fee\u5e2e";
+		AccreditID = "904aa0a25d7e45cebaaaed9a3fe91060";
 
-BasicNameValuePair  "wirelesscode"  StringUtils.getMD5Str(URLEncodedUtils.format(qparams, e.f) + MD5_CONSTANT))
-e.f = "UTF-8"
-MD5_CONSTANT = "soufunhttp";
+		BasicNameValuePair  "wirelesscode"  StringUtils.getMD5Str(URLEncodedUtils.format(qparams, e.f) + MD5_CONSTANT))
+		e.f = "UTF-8"
+		MD5_CONSTANT = "soufunhttp";
