@@ -1,2 +1,32 @@
-sdfjsjljiekk  just a night  did time out   
-next practice  dfgg
+step:
+step-1:login  get user info;
+step-2:refreshing get order list;
+step-3:qiang commit params to take customer
+
+params:
+
+params = params+MD5_CONSTANT;
+
+
+  HashMap<String, String> params = new HashMap();
+                params.put(AgentConstants.MWSSAGE_NAME, "QiangUser");
+                params.put("gjsoufunname", TakeCustomerActivity.this.mApp.getUserInfo().soufunname);
+                params.put("gjphone", TakeCustomerActivity.this.mApp.getUserInfo().soufunmobile);
+                params.put("gjsoufunid", TakeCustomerActivity.this.mApp.getUserInfo().soufunid);
+                params.put("orderid", TakeCustomerActivity.this.OrderId);
+                params.put("onwersoufunid", TakeCustomerActivity.this.OnwerSoufunId);
+                String ss = AgentApi.getString(params);
+
+
+property:
+HTTP_SCHEME = http
+HTTP_AGENT = "/homeservice.jsp";
+HTTP_HOST = isdefault ? "111.204.241.196:9071/homeservice" : "homeapp.3g.fang.com/http";   ->  http://homeapp.3g.fang.com/http/homeservice.jsp
+HTTP_HOST_HOME = isdefault ? "trains.home.test.fang.com/zxbapp" : "trains.home.fang.com/zxbapp";
+version = "3.6.3";
+APPNAME = "\u88c5\u4fee\u5e2e";
+AccreditID = "904aa0a25d7e45cebaaaed9a3fe91060";
+
+BasicNameValuePair  "wirelesscode"  StringUtils.getMD5Str(URLEncodedUtils.format(qparams, e.f) + MD5_CONSTANT))
+e.f = "UTF-8"
+MD5_CONSTANT = "soufunhttp";
