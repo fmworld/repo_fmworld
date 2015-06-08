@@ -1,3 +1,21 @@
 csdn博客：http://blog.csdn.net/zhaokaiqiang1992/article/details/44828163
 
 java的异步操作：Future机制
+
+内存区：
+
+1.java new机制 存放对象的堆内存，  java自身实现内存回收；
+2.系统的native堆， 是C++形式分配的堆内存，不受java回收机制影响，只受物理内存大小的影响；
+3.Android有另外一种内存区域，叫做Ashmem；类似于一个拥有二级缓冲的buffer，新数据到来时，
+旧数据会放入系统临时内存，在需要时才会清除旧数据，当新数据使用完后，旧数据所在的Ashmem空间在没有被释放的情况下任然可以恢复到Ashmem；
+
+图片编解码和内存的关系
+
+硬件加速在图片缩放变换中的优化
+
+Android的Drawables,它可以迅速的被替换
+
+控件在屏幕上显示的判断机制
+
+
+
