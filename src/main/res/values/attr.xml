@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="destinationList">
+        <attr name="viewMarginTop" format="integer" />
+        <attr name="titleResource" format="reference|color"/>
+        <attr name="contentResource" format="reference|color"/>
+        <attr name="targetView" format="reference|color"/>
+        <attr name="targetIndex" format="integer"/>
+    </declare-styleable>
+</resources>

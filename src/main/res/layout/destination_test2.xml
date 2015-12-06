@@ -1,0 +1,12 @@
+<com.fm.materialdesigntest.behavior.DestinationListTempTemp xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:destinationList="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/destination_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="#909090"
+    destinationList:titleResource="@layout/topview_title"
+    tools:context=".MainActivity">
+</com.fm.materialdesigntest.behavior.DestinationListTempTemp>
